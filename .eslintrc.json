@@ -1,0 +1,38 @@
+{  //сначала установил eslint командой из официальной доки eslint (eslint.config.mjs), 
+//потом с cursor установил airbnb , заменил на .eslintrc.json, 
+//так как новая версия (eslint.config.mjs) не поддерживала airbnb, но для next лучше та конфига
+//которая из коробки предлагается при create-next-app
+  "extends": [
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
+} 
